@@ -1,0 +1,44 @@
+Features: 10636 clips x 88 eGeMAPS features
+Splits: splits/folds.csv
+C = 1.0 (fixed); sensitivity grid [0.001, 0.01, 0.1, 1, 10, 100]; seed 42
+
+== Leave-one-actor-out ==
+fold 1 (test ex01, n=2657): C=1  acc=0.572  macro-F1=0.549
+fold 2 (test ex02, n=2660): C=1  acc=0.657  macro-F1=0.659
+fold 3 (test ex03, n=2660): C=1  acc=0.438  macro-F1=0.400
+fold 4 (test ex04, n=2659): C=1  acc=0.642  macro-F1=0.636
+
+mean ± sd over 4 folds: acc 0.577 ± 0.100, macro-F1 0.561 ± 0.117
+
+Recall per style (rows) per held-out actor (columns):
+test_speaker   ex01   ex02   ex03   ex04
+style                                   
+confused      0.289  0.632  0.618  0.542
+default       0.364  0.726  0.084  0.358
+enunciated    0.937  0.458  0.192  0.500
+happy         0.132  0.379  0.092  0.871
+laughing      0.476  0.818  0.779  0.545
+sad           0.826  0.624  0.311  0.684
+whisper       0.984  0.961  0.992  0.992
+
+F1 per style, mean over folds:
+style
+confused      0.460
+default       0.383
+enunciated    0.493
+happy         0.364
+laughing      0.664
+sad           0.572
+whisper       0.990
+
+== Random 80/20 split (speakers mixed) ==
+C=1 acc=0.775 macro-F1=0.775
+Gap random - leave-one-actor-out: acc +0.198, macro-F1 +0.214
+
+== Comparison: C tuned per fold vs fixed C ==
+       split  tuned_C  accuracy  macro_f1  fixed_C  accuracy_fixed_C  macro_f1_fixed_C
+       fold1     10.0    0.5732    0.5497      1.0            0.5725            0.5486
+       fold2      0.1    0.6575    0.6601      1.0            0.6568            0.6593
+       fold3      1.0    0.4383    0.3998      1.0            0.4383            0.3998
+       fold4    100.0    0.6439    0.6336      1.0            0.6416            0.6358
+random_80_20    100.0    0.7876    0.7873      1.0            0.7749            0.7749

@@ -1,0 +1,89 @@
+feature,group,changeable
+F0semitoneFrom27.5Hz_sma3nz_amean,Pitch level,No (sex proxy)
+F0semitoneFrom27.5Hz_sma3nz_stddevNorm,Pitch movement,Partly
+F0semitoneFrom27.5Hz_sma3nz_percentile20.0,Pitch level,No (sex proxy)
+F0semitoneFrom27.5Hz_sma3nz_percentile50.0,Pitch level,No (sex proxy)
+F0semitoneFrom27.5Hz_sma3nz_percentile80.0,Pitch level,No (sex proxy)
+F0semitoneFrom27.5Hz_sma3nz_pctlrange0-2,Pitch movement,Partly
+F0semitoneFrom27.5Hz_sma3nz_meanRisingSlope,Pitch movement,Partly
+F0semitoneFrom27.5Hz_sma3nz_stddevRisingSlope,Pitch movement,Partly
+F0semitoneFrom27.5Hz_sma3nz_meanFallingSlope,Pitch movement,Partly
+F0semitoneFrom27.5Hz_sma3nz_stddevFallingSlope,Pitch movement,Partly
+loudness_sma3_amean,Loudness,Yes
+loudness_sma3_stddevNorm,Loudness,Yes
+loudness_sma3_percentile20.0,Loudness,Yes
+loudness_sma3_percentile50.0,Loudness,Yes
+loudness_sma3_percentile80.0,Loudness,Yes
+loudness_sma3_pctlrange0-2,Loudness,Yes
+loudness_sma3_meanRisingSlope,Loudness,Yes
+loudness_sma3_stddevRisingSlope,Loudness,Yes
+loudness_sma3_meanFallingSlope,Loudness,Yes
+loudness_sma3_stddevFallingSlope,Loudness,Yes
+spectralFlux_sma3_amean,Spectral / timbre,No
+spectralFlux_sma3_stddevNorm,Spectral / timbre,No
+mfcc1_sma3_amean,Spectral / timbre,No
+mfcc1_sma3_stddevNorm,Spectral / timbre,No
+mfcc2_sma3_amean,Spectral / timbre,No
+mfcc2_sma3_stddevNorm,Spectral / timbre,No
+mfcc3_sma3_amean,Spectral / timbre,No
+mfcc3_sma3_stddevNorm,Spectral / timbre,No
+mfcc4_sma3_amean,Spectral / timbre,No
+mfcc4_sma3_stddevNorm,Spectral / timbre,No
+jitterLocal_sma3nz_amean,Voice quality,Partly
+jitterLocal_sma3nz_stddevNorm,Voice quality,Partly
+shimmerLocaldB_sma3nz_amean,Voice quality,Partly
+shimmerLocaldB_sma3nz_stddevNorm,Voice quality,Partly
+HNRdBACF_sma3nz_amean,Voice quality,Partly
+HNRdBACF_sma3nz_stddevNorm,Voice quality,Partly
+logRelF0-H1-H2_sma3nz_amean,Voice quality,Partly
+logRelF0-H1-H2_sma3nz_stddevNorm,Voice quality,Partly
+logRelF0-H1-A3_sma3nz_amean,Voice quality,Partly
+logRelF0-H1-A3_sma3nz_stddevNorm,Voice quality,Partly
+F1frequency_sma3nz_amean,Formants,No
+F1frequency_sma3nz_stddevNorm,Formants,No
+F1bandwidth_sma3nz_amean,Formants,No
+F1bandwidth_sma3nz_stddevNorm,Formants,No
+F1amplitudeLogRelF0_sma3nz_amean,Formants,No
+F1amplitudeLogRelF0_sma3nz_stddevNorm,Formants,No
+F2frequency_sma3nz_amean,Formants,No
+F2frequency_sma3nz_stddevNorm,Formants,No
+F2bandwidth_sma3nz_amean,Formants,No
+F2bandwidth_sma3nz_stddevNorm,Formants,No
+F2amplitudeLogRelF0_sma3nz_amean,Formants,No
+F2amplitudeLogRelF0_sma3nz_stddevNorm,Formants,No
+F3frequency_sma3nz_amean,Formants,No
+F3frequency_sma3nz_stddevNorm,Formants,No
+F3bandwidth_sma3nz_amean,Formants,No
+F3bandwidth_sma3nz_stddevNorm,Formants,No
+F3amplitudeLogRelF0_sma3nz_amean,Formants,No
+F3amplitudeLogRelF0_sma3nz_stddevNorm,Formants,No
+alphaRatioV_sma3nz_amean,Spectral / timbre,No
+alphaRatioV_sma3nz_stddevNorm,Spectral / timbre,No
+hammarbergIndexV_sma3nz_amean,Spectral / timbre,No
+hammarbergIndexV_sma3nz_stddevNorm,Spectral / timbre,No
+slopeV0-500_sma3nz_amean,Spectral / timbre,No
+slopeV0-500_sma3nz_stddevNorm,Spectral / timbre,No
+slopeV500-1500_sma3nz_amean,Spectral / timbre,No
+slopeV500-1500_sma3nz_stddevNorm,Spectral / timbre,No
+spectralFluxV_sma3nz_amean,Spectral / timbre,No
+spectralFluxV_sma3nz_stddevNorm,Spectral / timbre,No
+mfcc1V_sma3nz_amean,Spectral / timbre,No
+mfcc1V_sma3nz_stddevNorm,Spectral / timbre,No
+mfcc2V_sma3nz_amean,Spectral / timbre,No
+mfcc2V_sma3nz_stddevNorm,Spectral / timbre,No
+mfcc3V_sma3nz_amean,Spectral / timbre,No
+mfcc3V_sma3nz_stddevNorm,Spectral / timbre,No
+mfcc4V_sma3nz_amean,Spectral / timbre,No
+mfcc4V_sma3nz_stddevNorm,Spectral / timbre,No
+alphaRatioUV_sma3nz_amean,Spectral / timbre,No
+hammarbergIndexUV_sma3nz_amean,Spectral / timbre,No
+slopeUV0-500_sma3nz_amean,Spectral / timbre,No
+slopeUV500-1500_sma3nz_amean,Spectral / timbre,No
+spectralFluxUV_sma3nz_amean,Spectral / timbre,No
+loudnessPeaksPerSec,Rate & pauses,Yes
+VoicedSegmentsPerSec,Rate & pauses,Yes
+MeanVoicedSegmentLengthSec,Rate & pauses,Yes
+StddevVoicedSegmentLengthSec,Rate & pauses,Yes
+MeanUnvoicedSegmentLength,Rate & pauses,Yes
+StddevUnvoicedSegmentLength,Rate & pauses,Yes
+equivalentSoundLevel_dBp,Loudness,Yes
