@@ -1,0 +1,5 @@
+norm,inputs,coef_spearman_mean_pairwise
+raw,all88,0.774580956590681
+raw,pc1,0.8870247695852536
+spknorm,all88,0.784469532259784
+spknorm,pc1,0.9074820788530465

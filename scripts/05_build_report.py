@@ -4,7 +4,7 @@ Run after 03_train_logreg.py and 04_group_contributions.py.
 Needs reportlab (not part of the pipeline requirements):
     pip install reportlab
 Usage:
-    python scripts/05_build_report.py [--out report/Report.pdf]   (run from the "Expresso Project" folder)
+    python scripts/05_build_report.py [--out report/Final_Report.pdf]   (run from the "Expresso Project" folder)
 """
 
 import argparse
@@ -26,12 +26,13 @@ from feature_groups import CHANGEABLE, DESCRIPTION, GROUP_NAMES  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 RES = ROOT / "results"
-OUT = ROOT / "report" / "Report.pdf"
+OUT = ROOT / "report" / "Final_Report.pdf"
 
 STYLES = ["confused", "default", "enunciated", "happy", "laughing", "sad", "whisper"]
 SPEAKERS = ["ex01", "ex02", "ex03", "ex04"]
 INK, INK2, MUTED = colors.HexColor("#0b0b0b"), colors.HexColor("#52514e"), colors.HexColor("#898781")
 RULE, HEAD_BG, ACCENT = colors.HexColor("#e1e0d9"), colors.HexColor("#f0efec"), colors.HexColor("#1c5cab")
+UNIFORM_BRIER = 6 / 7  # Brier score of predicting 1/7 for every one of the 7 styles
 SIGN_EPS = 0.1  # |mean signed contribution| below this (logits) is shown as ~0
 
 ss = getSampleStyleSheet()
@@ -140,6 +141,8 @@ def main():
     sd = m[m["split"] == "std_4folds"].iloc[0]
     rnd = m[m["split"] == "random_80_20"].iloc[0]
     gap = rnd["accuracy"] - mean["accuracy"]
+    worst_b = fm.loc[fm["brier"].idxmax()]
+    fm_b_other = fm.loc[fm.index != fm["brier"].idxmax(), "brier"]
     worst = fm.loc[fm["macro_f1"].idxmin()]
     wk = worst["split"].replace("fold", "")
     cw = pd.read_csv(RES / f"confusion_fold{wk}.csv", index_col=0)
@@ -168,7 +171,7 @@ def main():
         P("Speech style classification with eGeMAPS + logistic regression", "title"),
         P("Report for the Black Box group (Explainable Data Science, AIT) - glass-box baseline path: "
           "model training, results and explanation mechanism<br/>"
-          "Prepared by Aung Khant Maung - 12 November 2026", "sub"),
+          "Prepared by Aung Khant Maung - 12 November 2026 (Brier score added 17 November 2026)", "sub"),
         Spacer(1, 10),
         P("Summary", "h1"),
         P(f"We trained a logistic regression on the 88 eGeMAPS acoustic features of 10,636 Expresso read-speech "
@@ -182,6 +185,9 @@ def main():
         f"Whisper is almost always recognised (mean F1 {f1_style['whisper']:.2f}); happy "
         f"({f1_style['happy']:.2f}) and default ({f1_style['default']:.2f}) are the hardest styles. Macro-F1 ranges "
         f"from {fm['macro_f1'].min():.2f} ({worst['test_speaker']}) to {fm['macro_f1'].max():.2f} across held-out actors.",
+        f"Brier score {mean['brier']:.3f} (mean of 4 folds; uniform guess {UNIFORM_BRIER:.3f}). On "
+        f"{worst_b['test_speaker']} it is {worst_b['brier']:.3f}, at uniform-guess level: there the model is "
+        "confidently wrong.",
         "Tuning C per fold instead of fixing it changes accuracy by at most "
         f"{(cmpc['accuracy'] - cmpc['accuracy_fixed_C']).abs().max() * 100:.1f} points; C = 1 keeps the explanations "
         "comparable across folds.",
@@ -259,19 +265,29 @@ def main():
 
     # ---------- 3. Results ----------
     story += [P("3. Results", "h1"), P("3.1 Overall", "h2")]
-    rows = [["Evaluation", "Test actor", "Train / test clips", "Accuracy", "Macro-F1"]]
+    rows = [["Evaluation", "Test actor", "Train / test clips", "Accuracy", "Macro-F1", "Brier score"]]
     for _, r in fm.iterrows():
         rows.append([r["split"].replace("fold", "Fold "), r["test_speaker"],
-                     f"{int(r['n_train']):,} / {int(r['n_test']):,}", pct(r["accuracy"]), f"{r['macro_f1']:.3f}"])
+                     f"{int(r['n_train']):,} / {int(r['n_test']):,}", pct(r["accuracy"]), f"{r['macro_f1']:.3f}",
+                     f"{r['brier']:.3f}"])
     rows.append(["<b>Mean +/- sd, 4 folds</b>", "", "", f"<b>{pct(mean['accuracy'])} +/- {sd['accuracy'] * 100:.1f}</b>",
-                 f"<b>{mean['macro_f1']:.3f} +/- {sd['macro_f1']:.3f}</b>"])
+                 f"<b>{mean['macro_f1']:.3f} +/- {sd['macro_f1']:.3f}</b>", f"<b>{mean['brier']:.3f} +/- {sd['brier']:.3f}</b>"])
     rows.append(["Random 80/20 split", "all mixed", f"{int(rnd['n_train']):,} / {int(rnd['n_test']):,}",
-                 pct(rnd["accuracy"]), f"{rnd['macro_f1']:.3f}"])
-    story.append(table(rows, [4 * cm, 2.4 * cm, 3.4 * cm, 3.6 * cm, W - 13.4 * cm]))
+                 pct(rnd["accuracy"]), f"{rnd['macro_f1']:.3f}", f"{rnd['brier']:.3f}"])
+    story.append(table(rows, [3.6 * cm, 2.0 * cm, 3.0 * cm, 3.0 * cm, 2.6 * cm, W - 14.2 * cm]))
     story += [Spacer(1, 4),
               P(f"Chance level is 14.3%. The random split scores {gap * 100:.0f} points higher, so much of what "
                 "the model learns is tied to the individual speaker; the leave-one-actor-out numbers are the "
                 "baseline to report."),
+              P("<b>Brier score.</b> Accuracy and macro-F1 only look at the top prediction. The Brier score also scores "
+                "the predicted probabilities: for each clip, the sum over the 7 styles of (predicted probability - 1 "
+                "for the true style, 0 otherwise)<super>2</super>, averaged over clips. Lower is better: 0 is perfect, 2 is "
+                f"fully confident and wrong, and a uniform guess (1/7 per style) scores {UNIFORM_BRIER:.3f}."),
+              P(f"Held-out {worst_b['test_speaker']} scores {worst_b['brier']:.3f}, no better than a uniform guess, "
+                f"although {pct(worst_b['accuracy'])} of its clips are labelled correctly: when the model is wrong on "
+                f"this voice it is confidently wrong. The other actors score {fm_b_other.min():.3f}-{fm_b_other.max():.3f}, and "
+                f"the random split {rnd['brier']:.3f}. Probabilities from this model should not be trusted on a new "
+                "voice without a check like this one."),
               P("3.2 Per style", "h2")]
     rs = ps[ps["split"] == "random_80_20"].set_index("style")["f1"]
     rows = [["Style"] + [f"Recall {s}" for s in SPEAKERS] + ["Mean F1 (4 folds)", "F1 random split"]]

@@ -1,8 +1,9 @@
 # Expresso: eGeMAPS → logistic regression (baseline path)
 
 Glass-box baseline for the Black Box group's Explainable Speech Style Classification project.
-The write-up of training, results and the explanation mechanism is in `report/Report.pdf`;
-this README covers setup, output files and how to reproduce everything.
+The write-up of training, results and the explanation mechanism is in `report/Final_Report.pdf`;
+follow-up experiments (per-speaker normalisation, one score per feature group, Brier score) are in
+`report/Experiments_Report.pdf`. This README covers setup, output files and how to reproduce everything.
 
 ## Setup
 ```
@@ -26,8 +27,10 @@ Run from this folder, in order:
 | 2 Folds | `.venv/bin/python scripts/02_make_folds.py` | `splits/folds.csv` | seconds |
 | 3 Train | `.venv/bin/python scripts/03_train_logreg.py` | `models/`, most of `results/` | ~10 s |
 | 4 Explanations | `.venv/bin/python scripts/04_group_contributions.py` | `results/feature_groups.csv`, `results/group_contributions_*.csv` | seconds |
-| 5 Report | `python scripts/05_build_report.py` (needs `pip install reportlab`) | `report/Report.pdf` (`--out` to change) | seconds |
+| 5 Report | `python scripts/05_build_report.py` (needs `pip install reportlab`) | `report/Final_Report.pdf` (`--out` to change) | seconds |
 | 6 Feature groups PDF | `python scripts/06_build_feature_groups_pdf.py` (needs `reportlab`) | `report/Feature_Groups.pdf` | seconds |
+| 7 Experiments | `.venv/bin/python scripts/07_experiments_spknorm_pca.py` | `results/experiments/`, `splits/calibration.csv` | about a minute or two |
+| 8 Experiments report | `python scripts/08_build_experiments_report.py` (needs `reportlab` + the pipeline packages) | `report/Experiments_Report.pdf` | seconds |
 
 - The download needs no Hugging Face login (public dataset, CC BY-NC 4.0; don't redistribute the audio).
 - Fixed seed 42 throughout. Each step writes its log to `logs/`.
@@ -42,7 +45,7 @@ Run from this folder, in order:
 | `splits/folds.csv` | id, speaker_id, style, fold (1-4 = test fold, fold k holds out ex0k), random_split (train/test) |
 | `models/logreg_fold{1-4}.joblib` | fitted scaler + logistic regression per fold (sklearn Pipeline, C = 1) |
 | `models/logreg_random_split.joblib` | same, trained on the random split |
-| `results/metrics_per_fold.csv` | accuracy, macro-F1, C per fold, mean, sd, random split |
+| `results/metrics_per_fold.csv` | accuracy, macro-F1, Brier score, C per fold, mean, sd, random split |
 | `results/per_style.csv` | precision, recall, F1, support per style per fold (+ random split) |
 | `results/predictions.csv` | every test prediction: split, id, speaker_id, style, pred, p_<style> × 7 |
 | `results/coefficients_fold{1-4}.csv` | 7 styles × 88 standardised coefficients per fold |
@@ -54,7 +57,10 @@ Run from this folder, in order:
 | `results/group_contributions_per_fold.csv` | the same per fold |
 | `results/group_contributions_random.csv` | the same for the random-split model |
 | `results/summary.txt`, `logs/` | printed report and the log of each step |
-| `report/Report.pdf` | the report |
+| `report/Final_Report.pdf` | the report |
+| `splits/calibration.csv` | the 50 default clips per actor used as the speaker's reference read (step 7); excluded from all step-7 evaluations |
+| `results/experiments/` | step 7: metrics (accuracy, macro-F1, Brier) for raw / speaker-normalised × 88 features / one PCA score per group / 90%-variance PCs, per-style results, PCA diagnostics, coefficient stability, speaker-ID probe, confusion matrices |
+| `report/Experiments_Report.pdf` | the experiments report (step 8) |
 | `report/Feature_Groups.pdf` | reference sheet: the 7 feature groups and the exact feature labels in each |
 
 ### Loading a model to explain or test it

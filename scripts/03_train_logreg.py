@@ -12,7 +12,7 @@ scan by 5-fold CV on the training part). A big gap between the two suggests the
 model leans on the speaker.
 
 Outputs (results/):
-  metrics_per_fold.csv     accuracy, macro-F1, C per fold (+ mean/std row) and random split
+  metrics_per_fold.csv     accuracy, macro-F1, Brier score, C per fold (+ mean/std row) and random split
   c_sensitivity_macro_f1.json  inner-CV macro-F1 for every C in C_GRID (not used to pick C)
   per_style.csv            precision / recall / F1 per style per fold
   predictions.csv          test predictions + class probabilities per clip
@@ -68,6 +68,13 @@ def c_sensitivity(X, y, cv, groups=None) -> dict:
                           cv=cv, n_jobs=-1, refit=False)
     search.fit(X, y, groups=groups)
     return dict(zip(map(str, C_GRID), np.round(search.cv_results_["mean_test_score"], 4).tolist()))
+
+
+def brier(y_true, proba, classes) -> float:
+    """Multiclass Brier score: mean over clips of sum_k (p_k - 1[y = k])^2.
+    0 = perfect, 2 = confidently wrong, 6/7 = 0.857 for a uniform guess over 7 styles."""
+    onehot = (np.asarray(y_true)[:, None] == np.asarray(classes)[None, :]).astype(float)
+    return float(np.mean(np.sum((proba - onehot) ** 2, axis=1)))
 
 
 def fit_fixed(X, y) -> Pipeline:
@@ -163,7 +170,8 @@ def main() -> None:
         proba = model.predict_proba(X[te])
         acc, mf1 = accuracy_score(y[te], p), f1_score(y[te], p, average="macro")
         fold_rows.append(dict(split=f"fold{k}", test_speaker=test_spk, n_train=int(tr.sum()),
-                              n_test=int(te.sum()), C=C_FIXED, accuracy=acc, macro_f1=mf1))
+                              n_test=int(te.sum()), C=C_FIXED, accuracy=acc, macro_f1=mf1,
+                              brier=brier(y[te], proba, model.classes_)))
 
         pr, rc, f1, sup = precision_recall_fscore_support(y[te], p, labels=STYLES, zero_division=0)
         style_rows += [dict(split=f"fold{k}", test_speaker=test_spk, style=s, precision=a, recall=b,
@@ -187,13 +195,16 @@ def main() -> None:
         pd.DataFrame(lr.coef_, index=classes, columns=feat_cols).to_csv(RESULTS / f"coefficients_fold{k}.csv")
         joblib.dump(model, MODELS / f"logreg_fold{k}.joblib")
         with redirect_stdout(log):
-            print(f"fold {k} (test {test_spk}, n={te.sum()}): C={C_FIXED:g}  acc={acc:.3f}  macro-F1={mf1:.3f}")
+            print(f"fold {k} (test {test_spk}, n={te.sum()}): C={C_FIXED:g}  acc={acc:.3f}  macro-F1={mf1:.3f}  "
+                  f"Brier={fold_rows[-1]['brier']:.3f}")
 
     folds = pd.DataFrame(fold_rows)
-    mean = folds[["accuracy", "macro_f1"]].mean()
-    std = folds[["accuracy", "macro_f1"]].std(ddof=1)
-    rows = fold_rows + [dict(split="mean_4folds", accuracy=mean["accuracy"], macro_f1=mean["macro_f1"]),
-                        dict(split="std_4folds", accuracy=std["accuracy"], macro_f1=std["macro_f1"])]
+    mean = folds[["accuracy", "macro_f1", "brier"]].mean()
+    std = folds[["accuracy", "macro_f1", "brier"]].std(ddof=1)
+    rows = fold_rows + [dict(split="mean_4folds", accuracy=mean["accuracy"], macro_f1=mean["macro_f1"],
+                             brier=mean["brier"]),
+                        dict(split="std_4folds", accuracy=std["accuracy"], macro_f1=std["macro_f1"],
+                             brier=std["brier"])]
 
     pd.DataFrame(cm_sum, index=STYLES, columns=STYLES).to_csv(RESULTS / "confusion_all_folds.csv")
     plot_confusion(cm_sum, f"All 4 held-out actors - acc {mean['accuracy']:.1%} (mean of folds)",
@@ -202,7 +213,8 @@ def main() -> None:
     styles = pd.DataFrame(style_rows)
     with redirect_stdout(log):
         print(f"\nmean ± sd over 4 folds: acc {mean['accuracy']:.3f} ± {std['accuracy']:.3f}, "
-              f"macro-F1 {mean['macro_f1']:.3f} ± {std['macro_f1']:.3f}")
+              f"macro-F1 {mean['macro_f1']:.3f} ± {std['macro_f1']:.3f}, "
+              f"Brier {mean['brier']:.3f} ± {std['brier']:.3f} (uniform guess 0.857)")
         print("\nRecall per style (rows) per held-out actor (columns):")
         print(styles.pivot(index="style", columns="test_speaker", values="recall").round(3).to_string())
         print("\nF1 per style, mean over folds:")
@@ -216,14 +228,16 @@ def main() -> None:
         cmp_rows.append(tuned_c_row("random_80_20", tuning["random_split"], X[tr], y[tr], X[te], y[te]))
         p = model.predict(X[te])
         acc, mf1 = accuracy_score(y[te], p), f1_score(y[te], p, average="macro")
+        rb = brier(y[te], model.predict_proba(X[te]), model.classes_)
         rows.append(dict(split="random_80_20", test_speaker="all", n_train=int(tr.sum()), n_test=int(te.sum()),
-                         C=C_FIXED, accuracy=acc, macro_f1=mf1))
+                         C=C_FIXED, accuracy=acc, macro_f1=mf1, brier=rb))
         pr, rc, f1, sup = precision_recall_fscore_support(y[te], p, labels=STYLES, zero_division=0)
         styles = pd.concat([styles, pd.DataFrame([dict(split="random_80_20", test_speaker="all", style=s,
                             precision=a, recall=b, f1=c, support=int(d)) for s, a, b, c, d in zip(STYLES, pr, rc, f1, sup)])])
         joblib.dump(model, MODELS / "logreg_random_split.joblib")
         with redirect_stdout(log):
-            print(f"\n== Random 80/20 split (speakers mixed) ==\nC={C_FIXED:g} acc={acc:.3f} macro-F1={mf1:.3f}")
+            print(f"\n== Random 80/20 split (speakers mixed) ==\nC={C_FIXED:g} acc={acc:.3f} macro-F1={mf1:.3f} "
+                  f"Brier={rb:.3f}")
             print(f"Gap random - leave-one-actor-out: acc {acc - mean['accuracy']:+.3f}, "
                   f"macro-F1 {mf1 - mean['macro_f1']:+.3f}")
 

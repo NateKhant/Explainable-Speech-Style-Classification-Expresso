@@ -1,0 +1,505 @@
+norm,fold,style,group,coef
+raw,1,confused,Rate & pauses,1.5814413832524012
+raw,1,confused,Loudness,-0.35147192166319885
+raw,1,confused,Pitch movement,0.14020571592671435
+raw,1,confused,Pitch level,-0.9463294284991401
+raw,1,confused,Voice quality,1.8692779192759506
+raw,1,confused,Spectral / timbre,-0.8722683406350993
+raw,1,confused,Formant frequency,-0.35489982450016205
+raw,1,confused,Formant bandwidth,0.1247239518473543
+raw,1,confused,Formant amplitude,-0.30964836713398036
+raw,1,default,Rate & pauses,-1.2447254407637545
+raw,1,default,Loudness,0.3698166117046152
+raw,1,default,Pitch movement,0.12837712461830436
+raw,1,default,Pitch level,0.8074084943432975
+raw,1,default,Voice quality,-0.9669954705230756
+raw,1,default,Spectral / timbre,-1.857130402719813
+raw,1,default,Formant frequency,-1.0416119225390803
+raw,1,default,Formant bandwidth,0.19684002594631902
+raw,1,default,Formant amplitude,0.7573413613488215
+raw,1,enunciated,Rate & pauses,1.361765657367237
+raw,1,enunciated,Loudness,0.062208855415334316
+raw,1,enunciated,Pitch movement,0.23345245921073673
+raw,1,enunciated,Pitch level,-1.2645365454754915
+raw,1,enunciated,Voice quality,2.1647626748824984
+raw,1,enunciated,Spectral / timbre,-1.429486083951939
+raw,1,enunciated,Formant frequency,-0.46266750363844994
+raw,1,enunciated,Formant bandwidth,1.3144747509702228
+raw,1,enunciated,Formant amplitude,-0.47761482606287803
+raw,1,happy,Rate & pauses,0.07227123038646613
+raw,1,happy,Loudness,0.007117254701377637
+raw,1,happy,Pitch movement,0.17142038592629438
+raw,1,happy,Pitch level,2.2194903271553845
+raw,1,happy,Voice quality,-0.9698383443409853
+raw,1,happy,Spectral / timbre,1.262623987791331
+raw,1,happy,Formant frequency,0.6983813516427626
+raw,1,happy,Formant bandwidth,-0.5273788624059361
+raw,1,happy,Formant amplitude,2.5162105700756996
+raw,1,laughing,Rate & pauses,0.0018382204708669743
+raw,1,laughing,Loudness,0.028101835214297644
+raw,1,laughing,Pitch movement,0.07972888910578256
+raw,1,laughing,Pitch level,1.523194274759821
+raw,1,laughing,Voice quality,-2.0327439910782403
+raw,1,laughing,Spectral / timbre,1.4394049033467538
+raw,1,laughing,Formant frequency,2.996034586437129
+raw,1,laughing,Formant bandwidth,0.12857335016182503
+raw,1,laughing,Formant amplitude,1.4532192539211122
+raw,1,sad,Rate & pauses,0.18909112211970094
+raw,1,sad,Loudness,-0.11490080072140342
+raw,1,sad,Pitch movement,-0.4572767960553201
+raw,1,sad,Pitch level,-2.981898195627168
+raw,1,sad,Voice quality,2.3989755099268035
+raw,1,sad,Spectral / timbre,-1.8072782334678654
+raw,1,sad,Formant frequency,-1.5781042291500826
+raw,1,sad,Formant bandwidth,0.013886217629124474
+raw,1,sad,Formant amplitude,-1.5467760399890402
+raw,1,whisper,Rate & pauses,-1.9616821728330491
+raw,1,whisper,Loudness,-0.0008718346506055025
+raw,1,whisper,Pitch movement,-0.295907778732599
+raw,1,whisper,Pitch level,0.6426710733433276
+raw,1,whisper,Voice quality,-2.4634382981428797
+raw,1,whisper,Spectral / timbre,3.264134169636548
+raw,1,whisper,Formant frequency,-0.2571324582520705
+raw,1,whisper,Formant bandwidth,-1.2511194341489509
+raw,1,whisper,Formant amplitude,-2.392731952159853
+raw,2,confused,Rate & pauses,1.6164844449436793
+raw,2,confused,Loudness,-0.6235153962938809
+raw,2,confused,Pitch movement,0.20281657970969738
+raw,2,confused,Pitch level,-0.9340232188910226
+raw,2,confused,Voice quality,1.7225158052808671
+raw,2,confused,Spectral / timbre,0.054704977823024595
+raw,2,confused,Formant frequency,-0.7132116180421711
+raw,2,confused,Formant bandwidth,-0.20191331217378683
+raw,2,confused,Formant amplitude,0.7726535580261644
+raw,2,default,Rate & pauses,-0.759129995000879
+raw,2,default,Loudness,0.4902864127565187
+raw,2,default,Pitch movement,0.005390133423884317
+raw,2,default,Pitch level,0.2553253239297224
+raw,2,default,Voice quality,-0.6991362681663322
+raw,2,default,Spectral / timbre,-1.563134566659738
+raw,2,default,Formant frequency,-1.5243218907926668
+raw,2,default,Formant bandwidth,0.606496370678172
+raw,2,default,Formant amplitude,0.36408237693483353
+raw,2,enunciated,Rate & pauses,1.570498845145785
+raw,2,enunciated,Loudness,0.6243010178563294
+raw,2,enunciated,Pitch movement,0.20859023390298637
+raw,2,enunciated,Pitch level,-1.1096339996301698
+raw,2,enunciated,Voice quality,2.458777821741209
+raw,2,enunciated,Spectral / timbre,-1.685802999133333
+raw,2,enunciated,Formant frequency,-0.869864089371979
+raw,2,enunciated,Formant bandwidth,1.2556523721490052
+raw,2,enunciated,Formant amplitude,-0.6982866330958101
+raw,2,happy,Rate & pauses,0.2826101510480912
+raw,2,happy,Loudness,-0.024371356902436324
+raw,2,happy,Pitch movement,0.26926513238283845
+raw,2,happy,Pitch level,0.89543562580859
+raw,2,happy,Voice quality,-0.7676264904941188
+raw,2,happy,Spectral / timbre,0.806521673696071
+raw,2,happy,Formant frequency,0.6793913608005958
+raw,2,happy,Formant bandwidth,-0.02982316434444261
+raw,2,happy,Formant amplitude,1.4804958900780334
+raw,2,laughing,Rate & pauses,-0.46506656759966625
+raw,2,laughing,Loudness,0.47638789810635856
+raw,2,laughing,Pitch movement,0.16178981806247947
+raw,2,laughing,Pitch level,1.3657227582275133
+raw,2,laughing,Voice quality,-1.6694110688494512
+raw,2,laughing,Spectral / timbre,0.35775020302716604
+raw,2,laughing,Formant frequency,2.6594170723862045
+raw,2,laughing,Formant bandwidth,-0.10375867310636006
+raw,2,laughing,Formant amplitude,0.7912583546874875
+raw,2,sad,Rate & pauses,-0.0027098747863717374
+raw,2,sad,Loudness,-0.5944160401162136
+raw,2,sad,Pitch movement,-0.8557323658236607
+raw,2,sad,Pitch level,-1.750231834439396
+raw,2,sad,Voice quality,1.1551437893517995
+raw,2,sad,Spectral / timbre,-0.4408280601656817
+raw,2,sad,Formant frequency,0.013851045238783246
+raw,2,sad,Formant bandwidth,-0.5072874125441504
+raw,2,sad,Formant amplitude,-0.2886195752944429
+raw,2,whisper,Rate & pauses,-2.2426870037508055
+raw,2,whisper,Loudness,-0.34867253540672327
+raw,2,whisper,Pitch movement,0.007880468341720109
+raw,2,whisper,Pitch level,1.2774053449949108
+raw,2,whisper,Voice quality,-2.2002635888640927
+raw,2,whisper,Spectral / timbre,2.470788771412616
+raw,2,whisper,Formant frequency,-0.24526188021872045
+raw,2,whisper,Formant bandwidth,-1.0193661806584486
+raw,2,whisper,Formant amplitude,-2.421583971336354
+raw,3,confused,Rate & pauses,1.736344401808549
+raw,3,confused,Loudness,-0.3097856099980051
+raw,3,confused,Pitch movement,-0.043208725154271085
+raw,3,confused,Pitch level,-1.0599704004855435
+raw,3,confused,Voice quality,2.2650239702008013
+raw,3,confused,Spectral / timbre,-0.3656500549305946
+raw,3,confused,Formant frequency,-1.0289162390515965
+raw,3,confused,Formant bandwidth,-0.4497442782801788
+raw,3,confused,Formant amplitude,0.5120211578808707
+raw,3,default,Rate & pauses,-0.8528674274306288
+raw,3,default,Loudness,0.6323838158029863
+raw,3,default,Pitch movement,-0.003784842177419724
+raw,3,default,Pitch level,-0.022393044104037464
+raw,3,default,Voice quality,-0.9445675134746625
+raw,3,default,Spectral / timbre,-1.7046726859028312
+raw,3,default,Formant frequency,-1.5797374986836417
+raw,3,default,Formant bandwidth,0.8085454754565443
+raw,3,default,Formant amplitude,0.7048117310465305
+raw,3,enunciated,Rate & pauses,1.9266409822311596
+raw,3,enunciated,Loudness,0.14160155312644204
+raw,3,enunciated,Pitch movement,0.05715204766297101
+raw,3,enunciated,Pitch level,-1.436371966665644
+raw,3,enunciated,Voice quality,2.5086442307038506
+raw,3,enunciated,Spectral / timbre,-1.0267376870849072
+raw,3,enunciated,Formant frequency,-1.751972620942319
+raw,3,enunciated,Formant bandwidth,2.0539512772752633
+raw,3,enunciated,Formant amplitude,-0.8866431455023948
+raw,3,happy,Rate & pauses,0.472450832577253
+raw,3,happy,Loudness,0.021708234820129818
+raw,3,happy,Pitch movement,0.2655177741242594
+raw,3,happy,Pitch level,0.4090884726360534
+raw,3,happy,Voice quality,-0.9758849860800737
+raw,3,happy,Spectral / timbre,0.8376701216490496
+raw,3,happy,Formant frequency,-0.5724580221270682
+raw,3,happy,Formant bandwidth,0.23528452329852786
+raw,3,happy,Formant amplitude,1.8348000014095525
+raw,3,laughing,Rate & pauses,0.870786952122137
+raw,3,laughing,Loudness,-0.06497402359619248
+raw,3,laughing,Pitch movement,0.3278702975916528
+raw,3,laughing,Pitch level,1.2012271201020623
+raw,3,laughing,Voice quality,-1.9988708574049576
+raw,3,laughing,Spectral / timbre,1.7958461533966084
+raw,3,laughing,Formant frequency,4.503516655232938
+raw,3,laughing,Formant bandwidth,-0.05597588023903116
+raw,3,laughing,Formant amplitude,1.2331632542557538
+raw,3,sad,Rate & pauses,-1.8109507743817317
+raw,3,sad,Loudness,0.014627765647684922
+raw,3,sad,Pitch movement,-0.6201081665810317
+raw,3,sad,Pitch level,-0.31884329983446563
+raw,3,sad,Voice quality,1.4761059341931237
+raw,3,sad,Spectral / timbre,-2.29181725239463
+raw,3,sad,Formant frequency,0.03442104060982796
+raw,3,sad,Formant bandwidth,-1.4105495914982098
+raw,3,sad,Formant amplitude,-0.6898788712747191
+raw,3,whisper,Rate & pauses,-2.3424049669268583
+raw,3,whisper,Loudness,-0.4355617358031626
+raw,3,whisper,Pitch movement,0.016561614533738514
+raw,3,whisper,Pitch level,1.227263118351556
+raw,3,whisper,Voice quality,-2.3304507781380748
+raw,3,whisper,Spectral / timbre,2.7553614052675313
+raw,3,whisper,Formant frequency,0.39514668496183386
+raw,3,whisper,Formant bandwidth,-1.1815115260130713
+raw,3,whisper,Formant amplitude,-2.708274127815663
+raw,4,confused,Rate & pauses,1.5372485144693506
+raw,4,confused,Loudness,-0.20207376057342097
+raw,4,confused,Pitch movement,0.09431366899517583
+raw,4,confused,Pitch level,-0.21956881346077858
+raw,4,confused,Voice quality,1.6528082878542103
+raw,4,confused,Spectral / timbre,-0.9049763285222825
+raw,4,confused,Formant frequency,-0.6591247702077515
+raw,4,confused,Formant bandwidth,-0.502717549735704
+raw,4,confused,Formant amplitude,0.08837983336529548
+raw,4,default,Rate & pauses,-1.3167444140194462
+raw,4,default,Loudness,0.4017959736620036
+raw,4,default,Pitch movement,-0.11404072650132806
+raw,4,default,Pitch level,-0.05460905654302589
+raw,4,default,Voice quality,-0.9674832099988877
+raw,4,default,Spectral / timbre,-2.0013984895383037
+raw,4,default,Formant frequency,-1.7470867714218734
+raw,4,default,Formant bandwidth,0.8957672647728183
+raw,4,default,Formant amplitude,0.7138248513327162
+raw,4,enunciated,Rate & pauses,1.5680661259558373
+raw,4,enunciated,Loudness,0.48325312949175403
+raw,4,enunciated,Pitch movement,0.10804844018078762
+raw,4,enunciated,Pitch level,-1.2756930311731163
+raw,4,enunciated,Voice quality,2.06770621352938
+raw,4,enunciated,Spectral / timbre,-0.6177887013739758
+raw,4,enunciated,Formant frequency,-1.2905729152264371
+raw,4,enunciated,Formant bandwidth,1.8979302701858416
+raw,4,enunciated,Formant amplitude,0.2050044301634412
+raw,4,happy,Rate & pauses,0.23750630950630006
+raw,4,happy,Loudness,0.20382794725336079
+raw,4,happy,Pitch movement,0.22836081907472822
+raw,4,happy,Pitch level,1.1251757291469853
+raw,4,happy,Voice quality,-0.721891553255039
+raw,4,happy,Spectral / timbre,0.4135164370476663
+raw,4,happy,Formant frequency,0.4955688894826818
+raw,4,happy,Formant bandwidth,0.3750513126323013
+raw,4,happy,Formant amplitude,1.4413702833252218
+raw,4,laughing,Rate & pauses,0.29844507970765394
+raw,4,laughing,Loudness,0.43435523445353136
+raw,4,laughing,Pitch movement,0.3242152842291557
+raw,4,laughing,Pitch level,0.9344685993297676
+raw,4,laughing,Voice quality,-1.7797663477352053
+raw,4,laughing,Spectral / timbre,1.5154347888247846
+raw,4,laughing,Formant frequency,3.5773012388808945
+raw,4,laughing,Formant bandwidth,0.3506223468116302
+raw,4,laughing,Formant amplitude,0.7397489108870069
+raw,4,sad,Rate & pauses,-0.09747167308924023
+raw,4,sad,Loudness,-0.9409617956222559
+raw,4,sad,Pitch movement,-0.8680335075424819
+raw,4,sad,Pitch level,-1.4687996646426202
+raw,4,sad,Voice quality,1.5923011143116088
+raw,4,sad,Spectral / timbre,-1.6398745677332163
+raw,4,sad,Formant frequency,-0.2051231618800659
+raw,4,sad,Formant bandwidth,-1.6243010063836694
+raw,4,sad,Formant amplitude,-0.37052338905274046
+raw,4,whisper,Rate & pauses,-2.227049942530465
+raw,4,whisper,Loudness,-0.3801967286650011
+raw,4,whisper,Pitch movement,0.22713602156368204
+raw,4,whisper,Pitch level,0.9590262373426759
+raw,4,whisper,Voice quality,-1.843674504706267
+raw,4,whisper,Spectral / timbre,3.2350868612953607
+raw,4,whisper,Formant frequency,-0.17096250962737275
+raw,4,whisper,Formant bandwidth,-1.3923526382832714
+raw,4,whisper,Formant amplitude,-2.8178049200207558
+spknorm,1,confused,Rate & pauses,1.5824482396181314
+spknorm,1,confused,Loudness,-0.2039536916023404
+spknorm,1,confused,Pitch movement,0.1783069990596832
+spknorm,1,confused,Pitch level,-1.026918740750397
+spknorm,1,confused,Voice quality,2.0940896118824814
+spknorm,1,confused,Spectral / timbre,-0.9654734262605296
+spknorm,1,confused,Formant frequency,-0.039788160312937935
+spknorm,1,confused,Formant bandwidth,0.19628902883899035
+spknorm,1,confused,Formant amplitude,-0.24251487626248894
+spknorm,1,default,Rate & pauses,-1.245277055780823
+spknorm,1,default,Loudness,0.45599213709698533
+spknorm,1,default,Pitch movement,0.13561327558102287
+spknorm,1,default,Pitch level,-0.004430008637547785
+spknorm,1,default,Voice quality,-0.8881876493523787
+spknorm,1,default,Spectral / timbre,-2.1091838643728655
+spknorm,1,default,Formant frequency,-0.7276083830428898
+spknorm,1,default,Formant bandwidth,-0.04458095373247164
+spknorm,1,default,Formant amplitude,0.717178507767935
+spknorm,1,enunciated,Rate & pauses,1.36024874539267
+spknorm,1,enunciated,Loudness,0.13548880449107567
+spknorm,1,enunciated,Pitch movement,0.2616847625024312
+spknorm,1,enunciated,Pitch level,-0.6412105821749907
+spknorm,1,enunciated,Voice quality,2.431417787896728
+spknorm,1,enunciated,Spectral / timbre,-1.7500451479463812
+spknorm,1,enunciated,Formant frequency,-0.37624064911354577
+spknorm,1,enunciated,Formant bandwidth,1.464686069625119
+spknorm,1,enunciated,Formant amplitude,-0.532778089993178
+spknorm,1,happy,Rate & pauses,0.15832489087911011
+spknorm,1,happy,Loudness,-0.2226051679254563
+spknorm,1,happy,Pitch movement,0.18226866766740224
+spknorm,1,happy,Pitch level,4.5288386097751205
+spknorm,1,happy,Voice quality,-1.0428406179727499
+spknorm,1,happy,Spectral / timbre,0.8422950019432193
+spknorm,1,happy,Formant frequency,0.2949622883379429
+spknorm,1,happy,Formant bandwidth,0.2774483869895578
+spknorm,1,happy,Formant amplitude,2.5036122692736336
+spknorm,1,laughing,Rate & pauses,-0.10429178425741119
+spknorm,1,laughing,Loudness,-0.14833520695659208
+spknorm,1,laughing,Pitch movement,0.06377407069743143
+spknorm,1,laughing,Pitch level,2.23672544599627
+spknorm,1,laughing,Voice quality,-2.022780592505951
+spknorm,1,laughing,Spectral / timbre,1.3582742731133663
+spknorm,1,laughing,Formant frequency,2.929848315474996
+spknorm,1,laughing,Formant bandwidth,0.4443057819599967
+spknorm,1,laughing,Formant amplitude,1.6189662492756143
+spknorm,1,sad,Rate & pauses,0.12726766498299855
+spknorm,1,sad,Loudness,0.1260844191263104
+spknorm,1,sad,Pitch movement,-0.4180782507579318
+spknorm,1,sad,Pitch level,-5.518916944354884
+spknorm,1,sad,Voice quality,2.304089861532433
+spknorm,1,sad,Spectral / timbre,-1.1888966743222256
+spknorm,1,sad,Formant frequency,-1.0610982096682084
+spknorm,1,sad,Formant bandwidth,-0.28932753024911345
+spknorm,1,sad,Formant amplitude,-1.1687939095939248
+spknorm,1,whisper,Rate & pauses,-1.8787207008350593
+spknorm,1,whisper,Loudness,-0.14267129422976144
+spknorm,1,whisper,Pitch movement,-0.40356952475021146
+spknorm,1,whisper,Pitch level,0.42591222014635777
+spknorm,1,whisper,Voice quality,-2.875788401480742
+spknorm,1,whisper,Spectral / timbre,3.8130298378456584
+spknorm,1,whisper,Formant frequency,-1.0200752016754886
+spknorm,1,whisper,Formant bandwidth,-2.0488207834321215
+spknorm,1,whisper,Formant amplitude,-2.8956701504678
+spknorm,2,confused,Rate & pauses,1.6001211866172549
+spknorm,2,confused,Loudness,-0.3896586866995902
+spknorm,2,confused,Pitch movement,0.22548036756955228
+spknorm,2,confused,Pitch level,-1.0134870864184045
+spknorm,2,confused,Voice quality,1.833484361737578
+spknorm,2,confused,Spectral / timbre,-0.47133724869891586
+spknorm,2,confused,Formant frequency,-0.3903823566881342
+spknorm,2,confused,Formant bandwidth,-0.061147365067348476
+spknorm,2,confused,Formant amplitude,0.5148783734284504
+spknorm,2,default,Rate & pauses,-0.7318867841403138
+spknorm,2,default,Loudness,0.5559272532673464
+spknorm,2,default,Pitch movement,-0.001513234370011
+spknorm,2,default,Pitch level,-1.003609272869075
+spknorm,2,default,Voice quality,-0.5974663686820781
+spknorm,2,default,Spectral / timbre,-1.8256243504075513
+spknorm,2,default,Formant frequency,-1.1771618637322292
+spknorm,2,default,Formant bandwidth,0.3636901385159005
+spknorm,2,default,Formant amplitude,0.29254934042712627
+spknorm,2,enunciated,Rate & pauses,1.6196470263811746
+spknorm,2,enunciated,Loudness,0.8473560732779056
+spknorm,2,enunciated,Pitch movement,0.27756623515614437
+spknorm,2,enunciated,Pitch level,-1.3317338258914282
+spknorm,2,enunciated,Voice quality,2.9580616441019663
+spknorm,2,enunciated,Spectral / timbre,-2.479783864722107
+spknorm,2,enunciated,Formant frequency,-0.7403513449314304
+spknorm,2,enunciated,Formant bandwidth,1.7002915820080058
+spknorm,2,enunciated,Formant amplitude,-1.4456560098662046
+spknorm,2,happy,Rate & pauses,0.020237013747079226
+spknorm,2,happy,Loudness,-0.2918460910146109
+spknorm,2,happy,Pitch movement,0.1416626918538306
+spknorm,2,happy,Pitch level,3.5695535275749273
+spknorm,2,happy,Voice quality,-0.9889744690955176
+spknorm,2,happy,Spectral / timbre,0.6495413657788608
+spknorm,2,happy,Formant frequency,0.09536576575629853
+spknorm,2,happy,Formant bandwidth,0.46189850083767436
+spknorm,2,happy,Formant amplitude,2.3116306684226964
+spknorm,2,laughing,Rate & pauses,-0.5894103322463347
+spknorm,2,laughing,Loudness,0.1662660419791141
+spknorm,2,laughing,Pitch movement,0.01359564049266319
+spknorm,2,laughing,Pitch level,2.8978541374678453
+spknorm,2,laughing,Voice quality,-1.818319576824606
+spknorm,2,laughing,Spectral / timbre,0.6943914433668998
+spknorm,2,laughing,Formant frequency,2.069061014118733
+spknorm,2,laughing,Formant bandwidth,0.14542565174213223
+spknorm,2,laughing,Formant amplitude,1.6103138148650502
+spknorm,2,sad,Rate & pauses,0.09581221884582505
+spknorm,2,sad,Loudness,-0.17211763115852946
+spknorm,2,sad,Pitch movement,-0.6877323654782581
+spknorm,2,sad,Pitch level,-4.648415715431504
+spknorm,2,sad,Voice quality,1.2212680979662283
+spknorm,2,sad,Spectral / timbre,-0.28505489702668246
+spknorm,2,sad,Formant frequency,1.2046438382039253
+spknorm,2,sad,Formant bandwidth,-0.7429559296368948
+spknorm,2,sad,Formant amplitude,-0.7714503094897006
+spknorm,2,whisper,Rate & pauses,-2.0145203292048732
+spknorm,2,whisper,Loudness,-0.7159269596515092
+spknorm,2,whisper,Pitch movement,0.03094066477592917
+spknorm,2,whisper,Pitch level,1.5298382355675604
+spknorm,2,whisper,Voice quality,-2.6080536892038646
+spknorm,2,whisper,Spectral / timbre,3.7178675517097144
+spknorm,2,whisper,Formant frequency,-1.061175052727388
+spknorm,2,whisper,Formant bandwidth,-1.867202578399609
+spknorm,2,whisper,Formant amplitude,-2.5122658777875553
+spknorm,3,confused,Rate & pauses,1.93479788592689
+spknorm,3,confused,Loudness,-0.22852148900455324
+spknorm,3,confused,Pitch movement,0.02758400655810008
+spknorm,3,confused,Pitch level,-1.8750538639663357
+spknorm,3,confused,Voice quality,2.3790231704295506
+spknorm,3,confused,Spectral / timbre,-0.362144524038475
+spknorm,3,confused,Formant frequency,-0.3948696107553491
+spknorm,3,confused,Formant bandwidth,-0.7679762733140716
+spknorm,3,confused,Formant amplitude,0.29396178214975616
+spknorm,3,default,Rate & pauses,-0.7204045630383888
+spknorm,3,default,Loudness,0.51318420538179
+spknorm,3,default,Pitch movement,-0.05132112643637094
+spknorm,3,default,Pitch level,-0.08154905340505332
+spknorm,3,default,Voice quality,-0.8242612927469396
+spknorm,3,default,Spectral / timbre,-1.819316477051117
+spknorm,3,default,Formant frequency,-1.6211128684083393
+spknorm,3,default,Formant bandwidth,0.9236407850899911
+spknorm,3,default,Formant amplitude,0.6290766287822281
+spknorm,3,enunciated,Rate & pauses,2.064852243098247
+spknorm,3,enunciated,Loudness,0.2680927991514539
+spknorm,3,enunciated,Pitch movement,0.10623168163188117
+spknorm,3,enunciated,Pitch level,-2.024906678836513
+spknorm,3,enunciated,Voice quality,2.5153716651217564
+spknorm,3,enunciated,Spectral / timbre,-1.3646546853581896
+spknorm,3,enunciated,Formant frequency,-1.2517248385497393
+spknorm,3,enunciated,Formant bandwidth,1.8731858656020661
+spknorm,3,enunciated,Formant amplitude,-1.1717297215746334
+spknorm,3,happy,Rate & pauses,0.2624828651746029
+spknorm,3,happy,Loudness,-0.06375313313195526
+spknorm,3,happy,Pitch movement,0.17918439742121137
+spknorm,3,happy,Pitch level,2.8156714171238333
+spknorm,3,happy,Voice quality,-1.0806454184062717
+spknorm,3,happy,Spectral / timbre,0.26821179486444247
+spknorm,3,happy,Formant frequency,-1.1347414629580586
+spknorm,3,happy,Formant bandwidth,1.1085209414072992
+spknorm,3,happy,Formant amplitude,2.1408854173658725
+spknorm,3,laughing,Rate & pauses,0.682790789743499
+spknorm,3,laughing,Loudness,-0.2336298618581542
+spknorm,3,laughing,Pitch movement,0.22516252167022527
+spknorm,3,laughing,Pitch level,1.9680396874254344
+spknorm,3,laughing,Voice quality,-2.018737407258318
+spknorm,3,laughing,Spectral / timbre,1.8088023393682464
+spknorm,3,laughing,Formant frequency,3.651125317398217
+spknorm,3,laughing,Formant bandwidth,0.46805348854623247
+spknorm,3,laughing,Formant amplitude,1.5221578445474042
+spknorm,3,sad,Rate & pauses,-1.7904870897745582
+spknorm,3,sad,Loudness,0.03492201288731871
+spknorm,3,sad,Pitch movement,-0.531949548375479
+spknorm,3,sad,Pitch level,-2.3496929217259135
+spknorm,3,sad,Voice quality,1.623110080075356
+spknorm,3,sad,Spectral / timbre,-2.0570046554861303
+spknorm,3,sad,Formant frequency,1.2718325661115653
+spknorm,3,sad,Formant bandwidth,-2.080114032430729
+spknorm,3,sad,Formant amplitude,-1.0537390629228542
+spknorm,3,whisper,Rate & pauses,-2.434032131130323
+spknorm,3,whisper,Loudness,-0.290294533426372
+spknorm,3,whisper,Pitch movement,0.04510806753043527
+spknorm,3,whisper,Pitch level,1.5474914133845818
+spknorm,3,whisper,Voice quality,-2.5938607972153807
+spknorm,3,whisper,Spectral / timbre,3.5261062077011673
+spknorm,3,whisper,Formant frequency,-0.52050910283828
+spknorm,3,whisper,Formant bandwidth,-1.52531077490089
+spknorm,3,whisper,Formant amplitude,-2.3606128883477497
+spknorm,4,confused,Rate & pauses,1.5799921897754803
+spknorm,4,confused,Loudness,-0.09355180629542935
+spknorm,4,confused,Pitch movement,0.13364878357549012
+spknorm,4,confused,Pitch level,-0.7283613050744308
+spknorm,4,confused,Voice quality,1.979438575470382
+spknorm,4,confused,Spectral / timbre,-1.1911069895059787
+spknorm,4,confused,Formant frequency,-0.4536350925398523
+spknorm,4,confused,Formant bandwidth,-0.572616193123828
+spknorm,4,confused,Formant amplitude,-0.1839193705796557
+spknorm,4,default,Rate & pauses,-1.301301112039452
+spknorm,4,default,Loudness,0.48849122937325257
+spknorm,4,default,Pitch movement,-0.10714900499449165
+spknorm,4,default,Pitch level,-0.9979291554764343
+spknorm,4,default,Voice quality,-0.8065466840463743
+spknorm,4,default,Spectral / timbre,-2.3812952162212015
+spknorm,4,default,Formant frequency,-1.5384388422345971
+spknorm,4,default,Formant bandwidth,0.47065329966087033
+spknorm,4,default,Formant amplitude,0.5915205089743896
+spknorm,4,enunciated,Rate & pauses,1.6653380886225102
+spknorm,4,enunciated,Loudness,0.6865039769929046
+spknorm,4,enunciated,Pitch movement,0.15004337163543352
+spknorm,4,enunciated,Pitch level,-1.472147893385392
+spknorm,4,enunciated,Voice quality,2.3709238006411386
+spknorm,4,enunciated,Spectral / timbre,-1.395248023842998
+spknorm,4,enunciated,Formant frequency,-1.1053882879286068
+spknorm,4,enunciated,Formant bandwidth,1.7239757846577097
+spknorm,4,enunciated,Formant amplitude,-0.5334852812632254
+spknorm,4,happy,Rate & pauses,0.37491707405076063
+spknorm,4,happy,Loudness,0.10130702389642668
+spknorm,4,happy,Pitch movement,0.10517931541764398
+spknorm,4,happy,Pitch level,2.8213802084217825
+spknorm,4,happy,Voice quality,-0.9837285077364617
+spknorm,4,happy,Spectral / timbre,0.4030616223496244
+spknorm,4,happy,Formant frequency,0.10284108466121444
+spknorm,4,happy,Formant bandwidth,0.9451357918570767
+spknorm,4,happy,Formant amplitude,1.8297338629719901
+spknorm,4,laughing,Rate & pauses,0.38849816431330064
+spknorm,4,laughing,Loudness,0.307778895630377
+spknorm,4,laughing,Pitch movement,0.21392883229330895
+spknorm,4,laughing,Pitch level,2.2956142166902023
+spknorm,4,laughing,Voice quality,-1.8898682960394613
+spknorm,4,laughing,Spectral / timbre,1.7473271732621474
+spknorm,4,laughing,Formant frequency,3.2139799874224306
+spknorm,4,laughing,Formant bandwidth,1.0100959649278805
+spknorm,4,laughing,Formant amplitude,1.164540678896577
+spknorm,4,sad,Rate & pauses,-0.3741965371054329
+spknorm,4,sad,Loudness,-0.7707755705627949
+spknorm,4,sad,Pitch movement,-0.6834808228467109
+spknorm,4,sad,Pitch level,-3.564099846136521
+spknorm,4,sad,Voice quality,1.6706285253608824
+spknorm,4,sad,Spectral / timbre,-1.3863177425622135
+spknorm,4,sad,Formant frequency,0.7392588161537518
+spknorm,4,sad,Formant bandwidth,-1.51882886921364
+spknorm,4,sad,Formant amplitude,-0.4356273516690599
+spknorm,4,whisper,Rate & pauses,-2.3332478676173025
+spknorm,4,whisper,Loudness,-0.7197537490349898
+spknorm,4,whisper,Pitch movement,0.1878295249193251
+spknorm,4,whisper,Pitch level,1.6455437749608235
+spknorm,4,whisper,Voice quality,-2.340847413650163
+spknorm,4,whisper,Spectral / timbre,4.203579176520727
+spknorm,4,whisper,Formant frequency,-0.9586176655343994
+spknorm,4,whisper,Formant bandwidth,-2.0584157787661037
+spknorm,4,whisper,Formant amplitude,-2.4327630473313966

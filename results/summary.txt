@@ -3,12 +3,12 @@ Splits: splits/folds.csv
 C = 1.0 (fixed); sensitivity grid [0.001, 0.01, 0.1, 1, 10, 100]; seed 42
 
 == Leave-one-actor-out ==
-fold 1 (test ex01, n=2657): C=1  acc=0.572  macro-F1=0.549
-fold 2 (test ex02, n=2660): C=1  acc=0.657  macro-F1=0.659
-fold 3 (test ex03, n=2660): C=1  acc=0.438  macro-F1=0.400
-fold 4 (test ex04, n=2659): C=1  acc=0.642  macro-F1=0.636
+fold 1 (test ex01, n=2657): C=1  acc=0.572  macro-F1=0.549  Brier=0.604
+fold 2 (test ex02, n=2660): C=1  acc=0.657  macro-F1=0.659  Brier=0.462
+fold 3 (test ex03, n=2660): C=1  acc=0.438  macro-F1=0.400  Brier=0.859
+fold 4 (test ex04, n=2659): C=1  acc=0.642  macro-F1=0.636  Brier=0.495
 
-mean ± sd over 4 folds: acc 0.577 ± 0.100, macro-F1 0.561 ± 0.117
+mean ± sd over 4 folds: acc 0.577 ± 0.100, macro-F1 0.561 ± 0.117, Brier 0.605 ± 0.180 (uniform guess 0.857)
 
 Recall per style (rows) per held-out actor (columns):
 test_speaker   ex01   ex02   ex03   ex04
@@ -32,7 +32,7 @@ sad           0.572
 whisper       0.990
 
 == Random 80/20 split (speakers mixed) ==
-C=1 acc=0.775 macro-F1=0.775
+C=1 acc=0.775 macro-F1=0.775 Brier=0.313
 Gap random - leave-one-actor-out: acc +0.198, macro-F1 +0.214
 
 == Comparison: C tuned per fold vs fixed C ==

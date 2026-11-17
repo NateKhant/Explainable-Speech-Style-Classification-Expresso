@@ -1,0 +1,88 @@
+Clips: 10636 total, 200 calibration (excluded), 10436 evaluated; seed 42, C = 1.0
+
+== Leave-one-actor-out, mean over 4 folds ==
+   norm inputs  n_inputs_mean  acc_mean  acc_sd  f1_mean  f1_sd  brier_mean  brier_sd  random_acc  random_brier  gap_random_minus_loao
+    raw  all88          88.00     0.581   0.099    0.560  0.118       0.601     0.179       0.777         0.312                  0.196
+    raw    pc1           9.00     0.458   0.045    0.432  0.047       0.655     0.055       0.560         0.557                  0.102
+    raw  kpc90          46.75     0.544   0.066    0.521  0.077       0.616     0.112       0.718         0.380                  0.174
+spknorm  all88          88.00     0.603   0.047    0.586  0.061       0.557     0.076       0.785         0.305                  0.183
+spknorm    pc1           9.00     0.482   0.023    0.467  0.025       0.643     0.028       0.565         0.544                  0.084
+spknorm  kpc90          46.75     0.581   0.031    0.564  0.042       0.567     0.050       0.730         0.371                  0.148
+
+== Accuracy per held-out actor ==
+test_speaker     ex01   ex02   ex03   ex04
+norm    inputs                            
+raw     all88   0.577  0.658  0.443  0.645
+        pc1     0.486  0.504  0.405  0.438
+        kpc90   0.568  0.592  0.447  0.569
+spknorm all88   0.583  0.647  0.545  0.636
+        pc1     0.511  0.482  0.457  0.476
+        kpc90   0.599  0.606  0.537  0.585
+
+== Recall per style, mean over folds ==
+norm          raw               spknorm              
+inputs      all88    pc1  kpc90   all88    pc1  kpc90
+style                                                
+confused    0.528  0.316  0.463   0.378  0.232  0.372
+default     0.364  0.249  0.338   0.663  0.430  0.592
+enunciated  0.523  0.232  0.502   0.636  0.342  0.632
+happy       0.377  0.409  0.311   0.545  0.462  0.561
+laughing    0.653  0.543  0.589   0.526  0.466  0.461
+sad         0.610  0.436  0.598   0.498  0.440  0.471
+whisper     0.982  0.996  0.980   0.982  0.993  0.984
+
+== Coefficient stability across folds (mean pairwise Spearman) ==
+   norm inputs  coef_spearman_mean_pairwise
+    raw  all88                        0.775
+    raw    pc1                        0.887
+spknorm  all88                        0.784
+spknorm    pc1                        0.907
+
+== Speaker-ID probe (5-fold CV accuracy; chance 0.25) ==
+   norm inputs  speaker_id_accuracy    sd
+    raw  all88                0.923 0.002
+    raw    pc1                0.572 0.006
+    raw  kpc90                0.868 0.002
+spknorm  all88                0.793 0.006
+spknorm    pc1                0.436 0.008
+spknorm  kpc90                0.674 0.005
+
+== PCA per group (mean over folds) ==
+                                  n_features      k  evr_pc1  var_explained_k
+norm    inputs group                                                         
+raw     pc1    Rate & pauses             6.0   1.00    0.412            0.412
+               Loudness                 11.0   1.00    0.447            0.447
+               Pitch movement            6.0   1.00    0.424            0.424
+               Pitch level               4.0   1.00    0.982            0.982
+               Voice quality            10.0   1.00    0.337            0.337
+               Spectral / timbre        33.0   1.00    0.221            0.221
+               Formant frequency         6.0   1.00    0.774            0.774
+               Formant bandwidth         6.0   1.00    0.712            0.712
+               Formant amplitude         6.0   1.00    0.987            0.987
+        kpc90  Rate & pauses             6.0   4.00    0.412            0.912
+               Loudness                 11.0   5.00    0.447            0.935
+               Pitch movement            6.0   4.00    0.424            0.934
+               Pitch level               4.0   1.00    0.982            0.982
+               Voice quality            10.0   7.00    0.337            0.923
+               Spectral / timbre        33.0  19.00    0.221            0.917
+               Formant frequency         6.0   2.00    0.774            0.943
+               Formant bandwidth         6.0   3.75    0.712            0.942
+               Formant amplitude         6.0   1.00    0.987            0.987
+spknorm pc1    Rate & pauses             6.0   1.00    0.411            0.411
+               Loudness                 11.0   1.00    0.459            0.459
+               Pitch movement            6.0   1.00    0.411            0.411
+               Pitch level               4.0   1.00    0.982            0.982
+               Voice quality            10.0   1.00    0.344            0.344
+               Spectral / timbre        33.0   1.00    0.233            0.233
+               Formant frequency         6.0   1.00    0.815            0.815
+               Formant bandwidth         6.0   1.00    0.707            0.707
+               Formant amplitude         6.0   1.00    0.987            0.987
+        kpc90  Rate & pauses             6.0   4.00    0.411            0.911
+               Loudness                 11.0   5.00    0.459            0.932
+               Pitch movement            6.0   4.00    0.411            0.934
+               Pitch level               4.0   1.00    0.982            0.982
+               Voice quality            10.0   7.00    0.344            0.928
+               Spectral / timbre        33.0  19.00    0.233            0.915
+               Formant frequency         6.0   2.00    0.815            0.942
+               Formant bandwidth         6.0   3.75    0.707            0.941
+               Formant amplitude         6.0   1.00    0.987            0.987
